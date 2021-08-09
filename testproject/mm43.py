@@ -27,5 +27,35 @@ try:
     driver.get('https://black-moss-0a0440e03.azurestaticapps.net/mm43.html')
     time.sleep(2)
 
+    input_email = driver.find_element_by_id('email')
+    btn_submit = driver.find_element_by_id('submit')
+# tc 1:
+    input_email.send_keys("teszt@elek.hu")
+    btn_submit.click()
+
+    #assert input_email == "teszt@elek.hu"
+
+    input_email.clear()
+    time.sleep(2)
+
+# Tc2
+
+    input_email.send_keys("teszt@")
+    btn_submit.click()
+    message = driver.find_element_by_xpath('/html/body/div/div/form/div').text
+    print(message)
+
+    assert message == "Kérjük, adja meg a „@” utáni részt is. A(z) „teszt@” cím nem teljes."
+
+    input_email.clear()
+    time.sleep(2)
+
+# tc3
+    btn_submit.click()
+    message = driver.find_element_by_xpath('/html/body/div/div/form/div').text
+    print(message)
+
+    assert message == "Kérjük, töltse ki ezt a mezőt."
+
 finally:
     driver.close()

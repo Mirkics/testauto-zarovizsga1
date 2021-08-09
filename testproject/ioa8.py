@@ -30,7 +30,7 @@ try:
 
     print(result)
 
-    assert
+    #assert ==
 
 finally:
     driver.close()
