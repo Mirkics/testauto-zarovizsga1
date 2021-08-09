@@ -42,7 +42,7 @@ try:
     calc_button.click()
     print(result.text)
 
-    assert result.text == "222"
+    assert result.text == expected_result[0]
 
 
     input_a.clear()
@@ -60,7 +60,7 @@ try:
     calc_button.click()
     print(result.text)
 
-    assert result.text == "NaN"
+    assert result.text == expected_result[1]
 
 
     input_a.clear()
@@ -78,7 +78,7 @@ try:
     calc_button.click()
     print(result.text)
 
-    assert result.text == "NaN"
+    assert result.text == expected_result[2]
 
 finally:
     driver.close()
