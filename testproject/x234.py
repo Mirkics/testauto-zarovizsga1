@@ -40,9 +40,9 @@ try:
     input_b.send_keys(data_b[0])
     time.sleep(2)
     calc_button.click()
-    print(result)
+    print(result.text)
 
-    assert result == "222"
+    assert result.text == "222"
 
 
     input_a.clear()
@@ -58,9 +58,9 @@ try:
     input_b.send_keys(data_b[1])
     time.sleep(2)
     calc_button.click()
-    print(result)
+    print(result.text)
 
-    assert result == "NaN"
+    assert result.text == "NaN"
 
 
     input_a.clear()
@@ -76,9 +76,9 @@ try:
     input_b.send_keys(data_b[2])
     time.sleep(2)
     calc_button.click()
-    print(result)
+    print(result.text)
 
-    assert result == "NaN"
+    assert result.text == "NaN"
 
 finally:
     driver.close()
