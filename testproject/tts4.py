@@ -20,16 +20,18 @@ try:
 
     submit_button = driver.find_element_by_id('submit')
 
-    result = driver.find_elements_by_id('//*[@id="results"]')
-
-    # gomb megnyomása 100.szor. Az eredményt kiírni egylistába és megszámolni a listában lévő 'fej' elemeket.
-
-    for i in range(100):
+    # gomb megnyomása 100.szor. megszámolni a 'fej' elemeket. Ha talál egyet, akkor növekszik a dbszám egyel.
+    number_fej = 0
+    for i in range(1, 100):
         submit_button.click()
-        #count['fej']
+        #time.sleep(1)
+        result = driver.find_element_by_id('lastResult').text
+        if result == 'fej':
+            number_fej += 1
 
+# minimum 30 db fej kell
+    assert number_fej >= 30
 
-    time.sleep(10)
 
 finally:
     driver.close()
