@@ -32,8 +32,8 @@ try:
 # tc 1:
     input_email.send_keys("teszt@elek.hu")
     btn_submit.click()
-
-    #assert input_email == "teszt@elek.hu"
+    valid_err = driver.find_elements_by_class_name("validation-error")
+    assert len(valid_err) == 0
 
     input_email.clear()
     time.sleep(2)
