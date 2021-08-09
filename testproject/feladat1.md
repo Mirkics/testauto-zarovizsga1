@@ -1,4 +1,4 @@
-## 1 Feladat: Keressük a téglalap kerületét
+# 1 Feladat: Keressük a téglalap kerületét
 
 Készíts egy Python python applikációt (egy darab python file) ami selenium-ot használ. 
 
