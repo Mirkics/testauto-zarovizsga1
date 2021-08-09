@@ -16,6 +16,9 @@ try:
     driver.get('https://black-moss-0a0440e03.azurestaticapps.net/rv4.html')
     time.sleep(2)
 
+    cities_list = driver.find_element_by_xpath('//*[@id="cites"]/text()')
+    print(cities_list)
+
 
 finally:
     driver.close()
